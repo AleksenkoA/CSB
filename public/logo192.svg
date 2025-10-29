@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="40" fill="#4A90E2"/>
+  
+  <!-- 4 squares grid -->
+  <g transform="translate(30, 30)">
+    <!-- Top-left square -->
+    <rect x="0" y="0" width="60" height="60" rx="8" fill="white"/>
+    
+    <!-- Top-right square -->
+    <rect x="72" y="0" width="60" height="60" rx="8" fill="white"/>
+    
+    <!-- Bottom-left square -->
+    <rect x="0" y="72" width="60" height="60" rx="8" fill="white"/>
+    
+    <!-- Bottom-right square -->
+    <rect x="72" y="72" width="60" height="60" rx="8" fill="white"/>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+.withdrawal-history-card {
+  background: #E5F5FA;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+  border: var(--border-width) solid var(--border-light);
+  height: 346px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.withdrawal-history-card h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.withdrawal-table {
+  width: 100%;
+  border-collapse: collapse;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.withdrawal-table thead {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.withdrawal-table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  background-color: #E5F5FA;
+}
+
+.withdrawal-table td {
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  color: #A1A6A9;
+  border-top: var(--border-width) solid var(--border-light);
+}
+
+.withdrawal-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.status-badge {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-normal);
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .withdrawal-history-card {
+    padding: 20px 15px;
+  }
+  
+  .withdrawal-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .withdrawal-table th,
+  .withdrawal-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+

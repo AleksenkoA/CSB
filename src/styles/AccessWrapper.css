@@ -1,0 +1,117 @@
+/* Skeleton Loader Styles */
+.access-wrapper-loading {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.skeleton-loader {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Forbidden State Styles */
+.access-wrapper-forbidden {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 200px;
+}
+
+.access-wrapper-forbidden-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.forbidden-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(240, 240, 240, 0.95);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+}
+
+.forbidden-message {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.forbidden-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.forbidden-scopes {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Chart/Table skeleton specific styles */
+.chart-card .skeleton-loader {
+  min-height: 300px;
+  padding: 20px 24px;
+}
+
+.withdrawal-history-card .skeleton-loader {
+  min-height: 400px;
+  padding: 20px;
+}
+

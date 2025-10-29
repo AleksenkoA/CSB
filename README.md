@@ -68,7 +68,7 @@ The application connects to the CSB Admin API:
 
 - **Email**: test@csb.com
 - **Password**: TEST-csb1
-- **OTP**: 000-000
+- **OTP**: 000000
 
 ## Getting Started
 

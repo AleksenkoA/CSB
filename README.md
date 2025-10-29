@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# CSB Admin Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Комплексная админ-панель для управления пользователями, картами и транзакциями CSB, построенная на React, Redux и i18next.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Authentication Flow**: Login with email/password and OTP verification
+- **Scope-Based Access Control**: Element visibility based on user permissions (scopes)
+- **Dashboard Metrics**: Key performance indicators with trend indicators
+- **Interactive Charts**: User/card growth dynamics (bar chart) and revenue from card sales (line chart)
+- **Top Transactions**: Display top 5 transactions with user details
+- **Withdrawal History**: Table showing withdrawal records with status
+- **Responsive Design**: Mobile and desktop layouts
+- **Internationalization**: Full i18next support with English and Russian translations
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 19** - UI framework
+- **Redux Toolkit** - State management
+- **React Router** - Navigation and routing
+- **Axios** - API requests
+- **i18next** - Internationalization
+- **Recharts** - Data visualization
+- **CSS3** - Styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── components/
+│   ├── Dashboard/
+│   │   ├── Dashboard.js        # Main dashboard component
+│   │   ├── Header.js           # Header with navigation
+│   │   ├── MetricCard.js       # Metric display card
+│   │   ├── TopTransactions.js  # Top 5 transactions list
+│   │   ├── GrowthChart.js      # Bar chart for growth
+│   │   ├── RevenueChart.js     # Line chart for revenue
+│   │   └── WithdrawalHistory.js # Withdrawal history table
+│   ├── Login.js                # Login form
+│   ├── OTPVerification.js      # OTP verification
+│   ├── ProtectedRoute.js       # Route protection
+│   ├── AccessWrapper.js        # Scope-based access control wrapper
+│   └── DateRangePicker.js      # Date range picker component
+├── store/
+│   ├── index.js                # Redux store configuration
+│   └── slices/
+│       ├── authSlice.js        # Authentication state
+│       └── dashboardSlice.js   # Dashboard data state
+├── services/
+│   └── api.js                  # Axios API configuration
+├── utils/
+│   ├── scopes.js               # Scope management utilities
+│   └── formatting.js          # Currency and date formatting
+├── styles/                      # CSS stylesheets
+├── i18n/                       # i18next configuration and translations
+├── setupProxy.js               # Development proxy configuration
+└── App.js                      # Root component
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Integration
 
-### `npm run build`
+The application connects to the CSB Admin API:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Base URL**: `https://api.csb-admin.com/api/v1`
+- **Documentation**: https://swintages.gitbook.io/api-reference/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Test Credentials
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Email**: test@csb.com
+- **Password**: TEST-csb1
+- **OTP**: 000-000
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Install Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Run Development Server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+The app will open at `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Note:** Development server uses a proxy (`src/setupProxy.js`) to forward API requests to `https://api.csb-admin.com/api/v1` to avoid CORS issues.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Build for Production
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Production builds use the full API URL directly without proxy.
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Quick deploy to Vercel:
 
-### Making a Progressive Web App
+```bash
+npm run build
+# Then connect your GitHub repo to vercel.com
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Features in Detail
 
-### Advanced Configuration
+### Scope-Based Access Control
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application uses `AccessWrapper` component to control element visibility based on user scopes:
 
-### Deployment
+- `scope:view-dashboard` - Dashboard access
+- `scope:view-users` - User management access
+- `scope:view-cards` - Card management access
+- `scope:view-promos` - Promo codes access
+- `scope:view-transactions` - Transaction access
+- `scope:view-withdrawals` - Withdrawal access
+- `scope:view-wallets` - Account wallets access
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Each dashboard block can show three states:
 
-### `npm run build` fails to minify
+- **Loading** - Skeleton loader while data is fetching
+- **Ready** - Normal content display
+- **Forbidden** - Dimmed overlay with access denied message
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Navigation items are dynamically shown/hidden based on user permissions.
+
+### Currency Formatting
+
+All monetary amounts are formatted as: **$ 10 000,00**
+
+- Space after dollar sign
+- Space as thousands separator
+- Comma as decimal separator
+
+### Responsive Design
+
+The dashboard adapts to different screen sizes:
+
+- **Desktop**: 3-column grid layout
+- **Tablet**: 2-column grid layout
+- **Mobile**: Single column stacked layout
+
+## Development
+
+### Adding New Features
+
+1. Create component in `src/components/`
+2. Add corresponding CSS in `src/styles/`
+3. Update Redux slices if state management needed
+4. Add API endpoints in `src/services/api.js`
+5. Update translations in `src/i18n/locales/`
+
+### Internationalization
+
+To add a new language:
+
+1. Create new file in `src/i18n/locales/` (e.g., `fr.json`)
+2. Add translation keys matching existing structure
+3. Update `src/i18n/config.js` to include the new language
+
+## API Endpoints Used
+
+- `POST /auth/login` - User login with email, password, and OTP
+- `GET /auth/scopes` - Fetch user scopes/permissions
+- `GET /dashboard/summary` - Dashboard metrics and top transactions
+- `GET /dashboard/user-card-dynamics` - User and card growth dynamics
+- `GET /dashboard/revenue-from-card-sales` - Revenue from card sales
+- `GET /dashboard/withdrawals-history` - Withdrawal history
+
+All requests require `Authorization: Bearer <token>` header.
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+MIT

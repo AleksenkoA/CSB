@@ -1,0 +1,58 @@
+{
+  "common": {
+    "search": "Введите ваш поисковый запрос...",
+    "refresh": "Обновить",
+    "refreshing": "Обновление...",
+    "lastUpdated": "Последнее обновление: {{time}}",
+    "justNow": "только что",
+    "minutesAgo": "{{count}} минуту назад",
+    "minutesAgo_plural": "{{count}} минут назад",
+    "notification": "Уведомления",
+    "date": "Дата",
+    "amount": "Сумма",
+    "status": "Статус",
+    "successfully": "Успешно",
+    "cancel": "Отмена",
+    "canceled": "Отменено",
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "logout": "Выход",
+    "login": "Вход"
+  },
+  "nav": {
+    "dashboard": "Панель управления",
+    "cardManagement": "Управление картами",
+    "promoCodes": "Промокоды",
+    "userManagement": "Управление пользователями",
+    "accountWallets": "Кошельки аккаунтов"
+  },
+  "dashboard": {
+    "title": "Панель управления",
+    "totalUsers": "Общее количество пользователей",
+    "totalCards": "Всего карт выпущено",
+    "averageProfit": "Средняя прибыль с клиента",
+    "totalTransactions": "Общее количество транзакций",
+    "totalTransactionAmount": "Общая сумма транзакций",
+    "revenue": "Доход",
+    "revenueDescription": "Общий доход от комиссий за транзакции",
+    "topTransactions": "Топ 5 транзакций",
+    "growthDynamics": "Динамика роста пользователей и карт",
+    "earnedThisWeek": "Заработано на этой неделе",
+    "revenueFromSales": "Доход от продаж карт",
+    "withdrawalHistory": "История выводов",
+    "comparedTo": "{{percentage}}% по сравнению с прошлой неделей"
+  },
+  "login": {
+    "title": "Вход в админ панель",
+    "email": "Email",
+    "password": "Пароль",
+    "otp": "Код OTP",
+    "submit": "Отправить",
+    "verifyOtp": "Подтвердить OTP",
+    "backToLogin": "Назад к входу"
+  },
+  "access": {
+    "insufficientRights": "Недостаточно прав для просмотра этого раздела. Обратитесь к администратору.",
+    "requiredScopes": "Требуемые права: {{scopes}}"
+  }
+}

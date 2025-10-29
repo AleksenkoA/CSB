@@ -1,0 +1,58 @@
+{
+  "common": {
+    "search": "Enter your search request...",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "lastUpdated": "Last updated: {{time}}",
+    "justNow": "just now",
+    "minutesAgo": "{{count}} minute ago",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "notification": "Notification",
+    "date": "Date",
+    "amount": "Amount",
+    "status": "Status",
+    "successfully": "Successfully",
+    "cancel": "Cancel",
+    "canceled": "Canceled",
+    "loading": "Loading...",
+    "error": "Error",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "cardManagement": "Card Management",
+    "promoCodes": "Promo Codes",
+    "userManagement": "User Management",
+    "accountWallets": "Account Wallets"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalUsers": "Total Number of Users",
+    "totalCards": "Total Cards Issued",
+    "averageProfit": "Average Profit per Client",
+    "totalTransactions": "Total Number of Transactions",
+    "totalTransactionAmount": "Total Transaction Amount",
+    "revenue": "Revenue",
+    "revenueDescription": "Total revenue generated from transaction fees",
+    "topTransactions": "Top 5 Transactions",
+    "growthDynamics": "User and Card Growth Dynamics",
+    "earnedThisWeek": "Earned this week",
+    "revenueFromSales": "Revenue from Card Sales",
+    "withdrawalHistory": "Withdrawal History",
+    "comparedTo": "{{percentage}}% compared to last week"
+  },
+  "login": {
+    "title": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "otp": "OTP Code",
+    "submit": "Submit",
+    "verifyOtp": "Verify OTP",
+    "backToLogin": "Back to Login"
+  },
+  "access": {
+    "insufficientRights": "Insufficient rights to view this section. Please contact an administrator.",
+    "requiredScopes": "Required permissions: {{scopes}}"
+  }
+}
